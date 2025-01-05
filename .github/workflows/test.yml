@@ -9,7 +9,8 @@ jobs:
         run: |
           sudo apt install -y ros-humble-ament-cmake
           rosdep update
-          rosdep install --from-paths ~/ros2_ws/src --ignore-src -r -y
+          ls -al /root/
+          rosdep install --from-paths root/ros2_ws/src --ignore-src -r -y
 
       - uses: actions/checkout@v2
       - name: build and test
