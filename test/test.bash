@@ -11,10 +11,11 @@ echo "Starting ROS2 node for testing..."
 ros2 run send_login_info send_login_info &  #nodeを起動
 ROS2_PID=$! #終了時にnodeを止めるためにプロセスIDを取得
 
-sleep 5     #ノードが起動するのを待つ
+sleep 1     #ノードが起動するのを待つ
 
 #テストを実行
 echo "Running tests..."/
+ros2 topic list
 if ros2 topic list | grep -q "/login_info"; then    #アクティブなトピックにlogin_infoがあるなら
     echo "Topic /login_info exists. Test passed."
 else
