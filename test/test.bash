@@ -4,7 +4,7 @@ dir=~
 [ "$1" != "" ] && dir="$1"
 
 cd $dir/ros2_ws
-sudo colcon build #ビルド　actinsで使うのであげる前にコメントアウト切る sudoで実行するとcmakeのエラーが解消される可能性があるので追加
+colcon build #ビルド　actinsで使うのであげる前にコメントアウト切る sudoで実行してもパッケージ見つからない
 source $dir/.bashrc
 
 echo "Starting ROS2 node for testing..."
