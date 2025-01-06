@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='tanaka',
     maintainer_email='s23c1085lw@s.chibakoudai.jp',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='package for sending login information',
+    license='BSD-3-Clause',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

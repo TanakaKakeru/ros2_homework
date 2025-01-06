@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightSPDX-FileCopyrightText: 2025 Kakeru Tanaka
+# SPDX-License-Identifier: BSD-3-Clause
 import rclpy    # ROS 2のクライアントのためのライブラリ
 from rclpy.node import Node  # ノードを実装するためのNodeクラス
 from login_info_msgs.msg import LoginInfo, LoginInfoArray  # 通信の型
@@ -25,7 +27,7 @@ def get_logged_in_users_info():  # whoから情報を取得しリストに入れ
         else:
             ip_address = "none"  # ローカルの場合
 
-        users_info.append({  # 情報をリストに追加
+        users_info.append({  # 辞書情報をリストに追加
             "user": user,
             "terminal": terminal,
             "login_time": login_time,
@@ -39,14 +41,12 @@ def cb():  # 定期実行されるコールバック関数
     msg = LoginInfoArray()  # メッセージ配列のオブジェクト
     info = get_logged_in_users_info()
     for entry in info:
-        user_msg = LoginInfo()  # 各ユーザーの情報を格納するメッセージ
+        user_msg = LoginInfo()  # 各ユーザーの情報を格納するメッセージ　LoginInfo型のuser_msgをつくる
         user_msg.user = entry['user']
         user_msg.terminal = entry['terminal']
         user_msg.login_time = entry['login_time']
         user_msg.ip_address = entry['ip_address']
-        #print(get_logged_in_users_info())
-        msg.users.append(user_msg)  # 配列に追加
-    #print("Publishing msg:", msg)  # デバッグ出力
+        msg.users.append(user_msg)  # user_msgをリストusrsに入れmsgに渡す
     pub.publish(msg)  # 配列をまとめて送信
 
 
