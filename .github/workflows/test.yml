@@ -9,7 +9,7 @@ jobs:
       - name: build and test
         run: |
           ls
-          source /opt/ros/humble/setup.bash 
+          . /opt/ros/humble/setup.bash
           rsync -av ./ /root/ros2_ws/src/ros2_homework/
           cd /root/ros2_ws
           bash -xv ./src/ros2_homework/test/test.bash /root    
