@@ -9,9 +9,6 @@ jobs:
       - name: build and test
         shell: bash
         run: |
-          sudo apt update
-          sudo apt install -y python3-pip
-          pip install setuptools==58.2.0
           source /opt/ros/humble/setup.bash
           rsync -av ./ /root/ros2_ws/src/ros2_homework/
           cd /root/ros2_ws
