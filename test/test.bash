@@ -4,14 +4,14 @@ dir=~
 [ "$1" != "" ] && dir="$1"
 
 cd $dir/ros2_ws
-colcon build #ビルド　actinsで使うのであげる前にコメントアウト切る sudoで実行してもパッケージ見つからない
+colcon build --symlink-install #ビルド　actinsで使うのであげる前にコメントアウト切る sudoで実行してもパッケージ見つからない
 source $dir/.bashrc
 
 echo "Starting ROS2 node for testing..."
 ros2 run send_login_info send_login_info &  #nodeを起動
 ROS2_PID=$! #終了時にnodeを止めるためにプロセスIDを取得
 
-sleep 5     #ノードが起動するのを待つ
+sleep      #ノードが起動するのを待つ
 
 #テストを実行
 echo "Running tests..."/
