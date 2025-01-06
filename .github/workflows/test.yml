@@ -2,7 +2,7 @@ name: test
 on: push
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - name: Install dependencies
@@ -11,7 +11,6 @@ jobs:
           rosdep update
           ls -al /root/ros2_ws
           rosdep install --from-paths /root/ros2_ws/src --ignore-src -r -y
-          pip3 install -U setuptools
           export CMAKE_PREFIX_PATH=/opt/ros/humble:$CMAKE_PREFIX_PATH
 
       - uses: actions/checkout@v2
