@@ -43,9 +43,9 @@ LoginInfo型をリストとして使用できるようにしたものです。
 
 send_login_infoディレクトリとlogin_info_msgsディレクトリを、ros2のワークスペースディレクトリ内のsrcの下に配置してビルドした後、souceで再読み込みしてください。
 
-例
+- 例
 ```
-$ mv ros2_homework/send_login_info ros2_homeworks/login_info_msgs ~/ros_ws/src/.
+$ mv ros2_homework/send_login_info ros2_homework/login_info_msgs ~/ros_ws/src/.
 $ cd ~/ros2ws 
 $ colcon build
 $ source ~/.bashrc
