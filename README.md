@@ -6,11 +6,11 @@
 
 # send_login_infoパッケージ
 
-ノードが実行されているコンピュータのログイン情報を送信するためのパッケージです。
+ノードが実行されているコンピュータのログイン情報を送信するためのパッケージです。本リポジトリ内の send_login_info ディレクトリが該当します。 
 
 ## send_login_infoノード
 
-ノードを実行中のコンピュータに現在ログインしているユーザー名、ターミナル名、ログイン時刻、IPアドレスを、後述のLoginInfoArrayArray型のリスト"users"でトピック"login_info"に1秒間隔に流します。IPアドレスが不明な場合は表示がnoneになります。実行にはリポジトリに同梱されたlogin_info_msgsパッケージが必要となります。
+ノードを実行中のコンピュータに現在ログインしているユーザー名、ターミナル名、ログイン時刻、IPアドレスを、後述のLoginInfoArrayArray型のリスト"users"でトピック"login_info"に1秒間隔に流します。IPアドレスが不明な場合は表示がnoneになります。実行にはリポジトリに同梱された login_info_msgs パッケージが必要となります。
 
 ### トピックに流れる情報
 ros2 topic echoで確認できる情報の例です。
@@ -29,7 +29,7 @@ users:
 ```
 # login_info_msgsパッケージ
 
-send_login_infoで使用するメッセージの型が入ったパッケージです。
+send_login_infoで使用するメッセージの型が入ったパッケージです。本リポジトリ内の login_info_msgs ディレクトリが該当します。
 
 ## LoginInfo型
 
@@ -49,9 +49,9 @@ LoginInfo型をリストとして使用できるようにしたものです。
 ワークスペースディレクトリに移動し、colcon build コマンドを実行してパッケージをビルドします。
 ビルド後に source コマンドで環境を再読み込みしてください。
 
-- 例
+- ホームディレクトリ内に本リポジトリのクローンとワークスペースディレクトリ"ros2_ws"がある場合の例
 ```
-$ mv ros2_homework/send_login_info ros2_homework/login_info_msgs ~/ros2_ws/src/.
+$ mv ~/ros2_homework/send_login_info ~/ros2_homework/login_info_msgs ~/ros2_ws/src/.
 $ cd ~/ros2_ws 
 $ colcon build
 $ source ~/.bashrc
