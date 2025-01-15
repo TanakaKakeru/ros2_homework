@@ -39,6 +39,10 @@ send_login_infoで使用するメッセージの型が入ったパッケージ�
 
 LoginInfo型をリストとして使用できるようにしたものです。
 
+# 実行に必要なソフトウェア
+- Python
+- ROS2
+
 # インストール方法
 
 send_login_info ディレクトリと login_info_msgs ディレクトリを、ROS2のワークスペースディレクトリ内の src ディレクトリに移動してください。
@@ -47,15 +51,11 @@ send_login_info ディレクトリと login_info_msgs ディレクトリを、RO
 
 - 例
 ```
-$ mv ros2_homework/send_login_info ros2_homework/login_info_msgs ~/ros_ws/src/.
-$ cd ~/ros2ws 
+$ mv ros2_homework/send_login_info ros2_homework/login_info_msgs ~/ros2_ws/src/.
+$ cd ~/ros2_ws 
 $ colcon build
 $ source ~/.bashrc
 ```
-
-# 実行に必要なソフトウェア
-- Python
-- ROS2
 
 # テスト環境
 - Ubuntu 22.04 LTS (ROS2 humble)
