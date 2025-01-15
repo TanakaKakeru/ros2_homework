@@ -39,6 +39,18 @@ send_login_infoで使用するメッセージの型が入ったパッケージ�
 
 LoginInfo型をリストとして使用できるようにしたものです。
 
+# インストール方法
+
+send_login_infoディレクトリとlogin_info_msgsディレクトリを、ros2のワークスペースディレクトリ内のsrcの下に配置してビルドした後、souceで再読み込みしてください。
+
+例
+```
+$ mv ros2_homework/send_login_info ros2_homeworks/login_info_msgs ~/ros_ws/src/.
+$ cd ~/ros2ws 
+$ colcon build
+$ source ~/.bashrc
+```
+
 # 実行に必要なソフトウェア
 - Python
 - ROS2
